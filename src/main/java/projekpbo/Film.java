@@ -1,21 +1,24 @@
 package projekpbo;
 
-public class Film {
-    public String judul;
-    public int harga;
-    public Studio studio; // AGREGASI: Film "has-a" Studio
+public class Film implements CsvConverter {
+    // ENCAPSULATION: Field private
+    private String judul;
+    private int harga;
+    private Studio studio; // AGREGASI
 
-    // Constructor menerima objek Studio yang SUDAH JADI (dari luar)
     public Film(String judul, int harga, Studio studio) {
         this.judul = judul;
         this.harga = harga;
         this.studio = studio; 
     }
     
-    public String toCSV() {
-        // Kita menyimpan data studio agar saat load bisa direkonstruksi
-        return judul + ";" + harga + ";" + studio.nama + ";" + 
-               studio.daftarKursi.length + ";" + studio.daftarKursi[0].length + ";" + 
-               studio.getKursiString();
+    // Getter methods
+    public String getJudul() { return judul; }
+    public int getHarga() { return harga; }
+    public Studio getStudio() { return studio; }
+
+    @Override
+    public String toCsv() {
+        return judul + ";" + harga + ";" + studio.toCsv();
     }
 }

@@ -3,12 +3,12 @@ package projekpbo;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class Tiket {
-    public String idTiket;
-    public String judulFilm;
-    public String infoKursi;
-    public int harga;
-    public long tanggalBeliEpoch;
+public class Tiket implements CsvConverter {
+    private String idTiket;
+    private String judulFilm;
+    private String infoKursi;
+    private int harga;
+    private long tanggalBeliEpoch;
 
     public Tiket(String id, String judul, String kursi, int harga, long waktu) {
         this.idTiket = (id == null) ? "TKT-" + System.currentTimeMillis() : id;
@@ -18,7 +18,8 @@ public class Tiket {
         this.tanggalBeliEpoch = (waktu == 0) ? System.currentTimeMillis() : waktu;
     }
 
-    public String toCSV() {
+    @Override
+    public String toCsv() {
         return idTiket + ";" + judulFilm + ";" + infoKursi + ";" + harga + ";" + tanggalBeliEpoch;
     }
 
