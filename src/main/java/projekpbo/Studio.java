@@ -2,7 +2,7 @@ package projekpbo;
 
 public class Studio implements CsvConverter {
     private String nama;
-    private Kursi[][] daftarKursi; // KOMPOSISI
+    private Kursi[][] daftarKursi;
 
     public Studio(String nama, int baris, int kolom) {
         this.nama = nama;
@@ -17,7 +17,6 @@ public class Studio implements CsvConverter {
 
     public String getNama() { return nama; }
     
-    // Membantu proses CSV untuk Film
     @Override
     public String toCsv() {
         return nama + ";" + daftarKursi.length + ";" + daftarKursi[0].length + ";" + getKursiString();
@@ -60,7 +59,6 @@ public class Studio implements CsvConverter {
     }
 
     public boolean bookKursi(int b, int k) {
-        // Validasi bounds array
         if (b >= 0 && b < daftarKursi.length && k >= 0 && k < daftarKursi[0].length) {
             if (!daftarKursi[b][k].isTerisi()) {
                 daftarKursi[b][k].setTerisi(true);
