@@ -24,6 +24,6 @@ public class Film implements CsvConverter {
 
     @Override
     public String toCsv() {
-        return judul + ";" + harga + ";" + studio.toCsv() + getTglTayang() + ";" + getJamTayang();
+        return judul + ";" + harga + ";" + studio.toCsv() + ";" + getTglTayang() + ";" + getJamTayang();
     }
 }

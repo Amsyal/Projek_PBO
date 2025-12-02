@@ -52,7 +52,15 @@ public class Pelanggan extends User {
         System.out.println("--- DAFTAR FILM ---");
         for(int i=0; i<listFilm.size(); i++) {
             Film f = listFilm.get(i);
-            System.out.println((i+1) + ". " + f.getJudul() + f.getJamTayang() + f.getTglTayang() + " (" + f.getStudio().getNama() + ")");
+           
+            System.out.println("--------------------------------");
+            System.out.println("No. Film : " + (i + 1)); 
+            System.out.println("Judul    : " + f.getJudul());
+            System.out.println("Harga    : Rp " + f.getHarga());
+            System.out.println("Jam      : Rp " + f.getJamTayang());
+            System.out.println("Tanggal  : Rp " + f.getTglTayang());
+            System.out.println("Studio   : " + f.getStudio().getNama());
+            System.out.println("--------------------------------");
         }
         
         try {
