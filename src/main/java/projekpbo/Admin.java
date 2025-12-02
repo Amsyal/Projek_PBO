@@ -99,14 +99,14 @@ public class Admin extends User {
 
         // 3. Minta input nomor film yang ingin dihapus
         System.out.print("Masukkan nomor film yang ingin dihapus (0 untuk batal): ");
-        int nomor;
+        int nomor = 0;
         
         try {
-            nomor = scanner.nextInt();
-            scanner.nextLine(); // Membersihkan buffer new line
+            String input = scanner.nextLine();
+            nomor = Integer.parseInt(input);
         } catch (Exception e) {
             System.out.println("Input harus berupa angka!");
-            scanner.nextLine(); // Bersihkan buffer jika error
+            scanner.nextLine();
             return;
         }
 

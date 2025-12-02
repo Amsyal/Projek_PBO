@@ -92,15 +92,20 @@ public class Main {
         System.out.println("---Daftar Akun---");
         System.out.println("Username: ");
         String newUser = scanner.nextLine();
-
+        
         for (User u: listAkun) {
             if (u.getUsername().equals(newUser)) {
                 System.out.println("User sudah ada.");
                 return;
             }
         }
-
+        
         System.out.println("Password: "); String pass = scanner.nextLine();
+        
+        if (newUser.contains(";") || pass.contains(";")) {
+            System.out.println("Username/Password tidak boleh mengandung karakter ';'");
+            return;
+        }
 
         listAkun.add(new Pelanggan(newUser, pass));
         saveAllData();
@@ -108,7 +113,7 @@ public class Main {
     }
 
     static void loadAllData() {
-        // listAkun.clear(); listFilm.clear();
+        listAkun.clear(); listFilm.clear();
         String line;
         try {
             File fUser = new File(FILE_USERS);
