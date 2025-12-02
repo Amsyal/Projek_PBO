@@ -33,17 +33,29 @@ public class Admin extends User {
 
     private void tambahFilm(ArrayList<Film> listFilm, Scanner scan) {
         try {
-            System.out.print("Judul : "); String j = scan.nextLine();
-            System.out.print("Harga : "); int h = Integer.parseInt(scan.nextLine());
-            System.out.print("Studio: "); String s = scan.nextLine();
+            System.out.print("Judul : "); String judul = scan.nextLine();
+            System.out.print("Harga : "); int harga = Integer.parseInt(scan.nextLine());
+            System.out.print("Studio: "); String studio = scan.nextLine();
+            System.out.print("Jam: "); String jam = scan.nextLine();
+            System.out.print("Tanggal: "); String tgl = scan.nextLine();
             System.out.print("Baris : "); int b = Integer.parseInt(scan.nextLine());
             System.out.print("Kolom : "); int k = Integer.parseInt(scan.nextLine());
 
-            Studio studioBaru = new Studio(s, b, k);
-            listFilm.add(new Film(j, h, studioBaru));
+            Studio studioBaru = new Studio(studio, b, k);
+            listFilm.add(new Film(judul, harga, studioBaru, tgl, jam));
             System.out.println("Film Berhasil Disimpan!");
         } catch (NumberFormatException e) {
             System.out.println("Input angka tidak valid.");
+        }
+    }
+
+    private void hapusFilm(ArrayList<Film> listFilm, Scanner scan) {
+        try {
+            System.out.println("Judul: "); String judul = scan.nextLine();
+
+            
+        } catch (Exception e) {
+            // TODO: handle exception
         }
     }
 }

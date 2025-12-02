@@ -100,8 +100,7 @@ public class Main {
             }
         }
 
-        System.out.println("Password: ");
-        String pass = scanner.nextLine();
+        System.out.println("Password: "); String pass = scanner.nextLine();
 
         listAkun.add(new Pelanggan(newUser, pass));
         saveAllData();
@@ -109,7 +108,7 @@ public class Main {
     }
 
     static void loadAllData() {
-        listAkun.clear(); listFilm.clear();
+        // listAkun.clear(); listFilm.clear();
         String line;
         try {
             File fUser = new File(FILE_USERS);
@@ -130,7 +129,7 @@ public class Main {
                     String[] data = line.split(";");
                     Studio s = new Studio(data[2], Integer.parseInt(data[3]), Integer.parseInt(data[4]));
                     s.loadKursiFromString(data[5]); 
-                    listFilm.add(new Film(data[0], Integer.parseInt(data[1]), s));
+                    listFilm.add(new Film(data[0], Integer.parseInt(data[1]), s, data[6], data[7]));
                 }
                 br.close();
             }

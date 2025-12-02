@@ -52,8 +52,7 @@ public class Pelanggan extends User {
         System.out.println("--- DAFTAR FILM ---");
         for(int i=0; i<listFilm.size(); i++) {
             Film f = listFilm.get(i);
-            // Menggunakan getter karena field sekarang private
-            System.out.println((i+1) + ". " + f.getJudul() + " (" + f.getStudio().getNama() + ")");
+            System.out.println((i+1) + ". " + f.getJudul() + f.getJamTayang() + f.getTglTayang() + " (" + f.getStudio().getNama() + ")");
         }
         
         try {
@@ -80,7 +79,6 @@ public class Pelanggan extends User {
             int b = bStr.charAt(0) - 'A';
             int k = Integer.parseInt(kStr) - 1;
             
-            // Logika bisnis tetap ada di Studio, tapi dipanggil dari sini
             if(film.getStudio().bookKursi(b, k)) {
                 Tiket t = new Tiket(null, film.getJudul(), bStr+kStr, film.getHarga(), 0);
                 this.simpanTiket(t);
