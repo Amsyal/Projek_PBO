@@ -57,8 +57,8 @@ public class Pelanggan extends User {
             System.out.println("No. Film : " + (i + 1)); 
             System.out.println("Judul    : " + f.getJudul());
             System.out.println("Harga    : Rp " + f.getHarga());
-            System.out.println("Jam      : Rp " + f.getJamTayang());
-            System.out.println("Tanggal  : Rp " + f.getTglTayang());
+            System.out.println("Jam      : " + f.getJamTayang());
+            System.out.println("Tanggal  : " + f.getTglTayang());
             System.out.println("Studio   : " + f.getStudio().getNama());
             System.out.println("--------------------------------");
         }

@@ -74,8 +74,8 @@ public class Admin extends User {
         System.out.println("No. Film : " + (i + 1)); 
         System.out.println("Judul    : " + film.getJudul());
         System.out.println("Harga    : Rp " + film.getHarga());
-        System.out.println("Jam      : Rp " + film.getJamTayang());
-        System.out.println("Tanggal  : Rp " + film.getTglTayang());
+        System.out.println("Jam      : " + film.getJamTayang());
+        System.out.println("Tanggal  : " + film.getTglTayang());
         System.out.println("Studio   : " + film.getStudio().getNama());
     }
     System.out.println("--------------------------------");
